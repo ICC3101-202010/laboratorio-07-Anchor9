@@ -61,11 +61,12 @@
             // 
             // Resultado_previo
             // 
-            this.Resultado_previo.AutoSize = true;
-            this.Resultado_previo.Location = new System.Drawing.Point(409, 46);
+            this.Resultado_previo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Resultado_previo.Location = new System.Drawing.Point(122, 51);
             this.Resultado_previo.Name = "Resultado_previo";
-            this.Resultado_previo.Size = new System.Drawing.Size(0, 13);
+            this.Resultado_previo.Size = new System.Drawing.Size(317, 27);
             this.Resultado_previo.TabIndex = 1;
+            this.Resultado_previo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Resultado_previo.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn1

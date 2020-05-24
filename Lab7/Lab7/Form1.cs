@@ -36,82 +36,112 @@ namespace Lab7
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (Entrada.Text == "Syntax ERROR")
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR")
             {
                 Entrada.Clear();
             }
             Entrada.Text = Entrada.Text + "1";
+            Resultado_previo.Text = Resultado_previo.Text + "1";
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            if (Entrada.Text == "Syntax ERROR")
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR")
             {
                 Entrada.Clear();
             }
             Entrada.Text = Entrada.Text + "2";
+            Resultado_previo.Text = Resultado_previo.Text + "2";
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            if (Entrada.Text == "Syntax ERROR")
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR")
             {
                 Entrada.Clear();
             }
             Entrada.Text = Entrada.Text + "3";
+            Resultado_previo.Text = Resultado_previo.Text + "3";
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == final.ToString())
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
             {
                 Entrada.Clear();
             }
             Entrada.Text = Entrada.Text + "4";
+            Resultado_previo.Text = Resultado_previo.Text + "4";
         }
 
         private void btn5_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + "5";
+            Resultado_previo.Text = Resultado_previo.Text + "5";
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + "6";
+            Resultado_previo.Text = Resultado_previo.Text + "6";
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + "7";
+            Resultado_previo.Text = Resultado_previo.Text + "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + "8";
+            Resultado_previo.Text = Resultado_previo.Text + "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" || Entrada.Text == final.ToString())
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + "9";
+            Resultado_previo.Text = Resultado_previo.Text + "9";
+        }
+
+        private void btn_decimal_Click(object sender, EventArgs e)
+        {
+            if (Entrada.Text == "Syntax ERROR" || Entrada.Text == "Math ERROR" )
+            {
+                Entrada.Clear();
+            }
+            Entrada.Text = Entrada.Text + ",";
+            Resultado_previo.Text = Resultado_previo.Text + ",";
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
         {
             if (Entrada.Text == "Syntax ERROR")
             {
                 Entrada.Clear();
             }
-            Entrada.Text = Entrada.Text + "5";
-        }
-
-        private void btn6_Click(object sender, EventArgs e)
-        {
-            if (Entrada.Text == "Syntax ERROR") 
-            {
-                Entrada.Clear();
-            }
-            Entrada.Text = Entrada.Text + "6";
-        }
-
-        private void btn7_Click(object sender, EventArgs e)
-        {
-            Entrada.Text = Entrada.Text + "7";
-        }
-
-        private void btn8_Click(object sender, EventArgs e)
-        {
-            Entrada.Text = Entrada.Text + "8";
-        }
-
-        private void btn9_Click(object sender, EventArgs e)
-        {
-            Entrada.Text = Entrada.Text + "9";
-            
-        }
-
-        private void btn_decimal_Click(object sender, EventArgs e)
-        {
-            Entrada.Text = Entrada.Text + ",";
-        }
-
-        private void btn0_Click(object sender, EventArgs e)
-        {
             Entrada.Text = Entrada.Text + "0";
+            Resultado_previo.Text = Resultado_previo.Text + "0";
         }
 
         private void btn_CE_Click(object sender, EventArgs e)
@@ -140,7 +170,7 @@ namespace Lab7
             {
                 first = Convert.ToDouble(Entrada.Text);
                 Entrada.Clear();
-
+                Resultado_previo.Text = Resultado_previo.Text + "+";
             }
         }
 
@@ -165,7 +195,7 @@ namespace Lab7
             {
                 first = Convert.ToDouble(Entrada.Text);
                 Entrada.Clear();
-
+                Resultado_previo.Text = Resultado_previo.Text + "-";
             }
 ;
         }
@@ -175,6 +205,7 @@ namespace Lab7
             operation = "*";
             first = Convert.ToDouble(Entrada.Text);
             Entrada.Clear();
+            Resultado_previo.Text = Resultado_previo.Text + "*";
         }
 
         private void btn_div_Click(object sender, EventArgs e)
@@ -182,6 +213,7 @@ namespace Lab7
             operation = "/";
             first = Convert.ToDouble(Entrada.Text);
             Entrada.Clear();
+            Resultado_previo.Text = Resultado_previo.Text + "/";
         }
 
         private void btn_igual_Click(object sender, EventArgs e)
@@ -189,6 +221,7 @@ namespace Lab7
   
 
             second = double.Parse(Entrada.Text);
+            
             if (operation == "+")
             {
 
@@ -207,10 +240,19 @@ namespace Lab7
             }
             else if (operation == "/")
             {
-                Resultado_previo.Text = final.ToString();
-                final = first / second;
-                Entrada.Clear();
-                Entrada.Text = final.ToString();
+                if (second == 0)
+                {
+                    Entrada.Text = "Math ERROR";
+                }
+                else 
+                {
+                    Resultado_previo.Text = final.ToString();
+                    final = first / second;
+                    Entrada.Clear();
+                    Entrada.Text = final.ToString();
+
+                }
+
             }
             else if (operation == "-")
             {
@@ -219,6 +261,9 @@ namespace Lab7
                 Entrada.Clear();
                 Entrada.Text = final.ToString();
             }
+            Resultado_previo.Text = "";
+
+
 
 
 
@@ -232,13 +277,17 @@ namespace Lab7
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int cont = 0;
-            foreach (char letra in Entrada.Text) 
+            if (Entrada.Text != "")
             {
-                cont++;
-            
+                int cont = 0;
+                foreach (char letra in Entrada.Text)
+                {
+                    cont++;
+
+                }
+                Entrada.Text = Entrada.Text.Remove(cont - 1);
+                //Resultado_previo.Text = Resultado_previo.Text.Remove(cont - 1);
             }
-            Entrada.Text = Entrada.Text.Remove(cont-1);
         }
 
         private void btnAnswer_Click(object sender, EventArgs e)
